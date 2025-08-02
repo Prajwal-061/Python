@@ -1,0 +1,76 @@
+File Handling In Python:
+
+I learned to open the file in different modes like append,read,write. I learned to read the file line by line and convert it into dicitonary. The basic syntax to open the file and read it line by line looks like this:
+Here we are using with open to open the file other method is to use :
+#f=open("file.txt","r")
+  f.close()
+we are not using this because we have to close the file everytime we open it manually but in case of with open we do not have to close the file manually, So with open is used oftenly.
+
+Let's say we have file.txt and it contains the following content.
+Hello World
+Python is awesome
+Keep learning!
+
+
+This will read the whole line of a file.
+# with open("file.txt","r") as f:
+   for line in f:
+     print(line)
+
+This code will open the file called "file.txt" and read each line from it and print line by line.The output will be:
+Hello World
+Python is awesome
+Keep learning!
+
+
+We can also do this without using for loop.Let's see one example:
+ # with open("file.txt","r") as f:
+    content=f.read()
+    print(content)
+   
+This code will also print the whole content of the file as a string.
+
+Use of readline() in File Handling:
+ # with open("file.txt","r") as f:
+    content=f.readline()
+    print(content)
+
+The output will be:
+Hello World
+The readline() method will print only the one line at a time.
+
+Use of readlines() method in File Handling:
+ # with open("sample.txt", "r") as f:
+    lines = f.readlines()
+    print(lines)
+The output will be :
+['Hello World\n', 'Python is awesome\n', 'Keep learning!']
+
+The method readlines() will print:
+Each element in the list is a line from the file, including the newline characters.
+
+
+To open the file in write mode:
+# with open("file.txt","w") as f:
+   f.write("I am loving Python")
+
+This block of code will write "I am loving Python in the file "file.txt" if it exists and if it doesn't exists then, it will first create the file and write on it. The write mode will delete the previous content present in the file and adds the new content given so append mode is necessary.
+
+
+To Open the file in append mode or to aadd something on it,the code is simpler too:
+# with open("file.txt","a") as f:
+    f.write("I am opening the file in append mode")
+
+This will open the file called "file.txt" and without overriding the file it simply adds "I am opening the file in append mode" this line in the existing file.
+
+
+We can also delete the file through file handling what we have to do is import the os module in it.
+
+# import os
+if os.path.exists("dummy.txt"):
+  os.remove("dummy.txt")
+else:
+print("file not found")
+
+
+This is the overall summary of the File Handling in Python.

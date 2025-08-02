@@ -1,0 +1,19 @@
+students = {
+    "Ram": {"Math": 80, "English": 75, "Science": 70},
+    "Sita": {"Math": 90, "English": 85, "Science": 95},
+    "Gita": {"Math": 70, "English": 65, "Science": 60}
+}
+
+sub=students['Ram'].keys()
+print(sub)
+for subject in sub:
+    highest=0
+    highest_name=""
+    for name in students:
+        mark=students[name][subject]
+        if mark > highest:
+            highest=mark
+            highest_name=name
+
+    print(f"{subject}: {highest_name} scored with {highest}.")
+

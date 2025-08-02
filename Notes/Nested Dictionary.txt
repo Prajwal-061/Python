@@ -1,0 +1,81 @@
+Nested Dictionary:
+
+I learned about the nested dictionary and looping through the nested dictionary in the previous lecture. I find it little confusing at first glance, after practising 2,3 questions, I was able to figure out what was happening at the backend.
+
+Nested Dictionary is important concept and it is important while storing records (like students, employees).
+JSON-like data.
+API responses.
+Project datasets. building projects too. 
+
+The example of nested dictionary looks like this:
+students = {
+    "Ram": {"Math": 80, "English": 75, "Science": 70},
+    "Sita": {"Math": 90, "English": 85, "Science": 95},
+    "Gita": {"Math": 70, "English": 65, "Science": 60}
+}
+
+
+here ram,sita and gita are the keys of the outer dictionary and their values are subject names with their corresponding marks.
+
+{"Math": 80, "English": 75, "Science": 70}
+This is the Inner dictionary.
+
+How do we access the specific values?
+We simply write:
+print(students['Ram']['Math']
+This will give the marks of ram in math which is 80. Similarly we can access any value.
+
+The more simpler to access the value will be use of .values() in dictionary.Let us see the example of .values().
+print(students["Ram"].values())
+what does this do is it simple prints all the values of the inner dictionary associated with ram so the output will be:
+#dict_values([80, 75, 70])
+
+
+How can we loop through the nested dictionary?
+It looks like this to loop through the nested dictionary:
+
+for name,marks in students.items():
+ print(name,marks)
+
+
+here .items() returns the tuples of the dictionary that is it gives two values where keys are stored in name and the value in marks. Since it is nested dictionary the marks now contains the value which is {"Math": 80, "English": 75, "Science": 70} for Ram. Therefore, it can bee visualize as marks is the new name of the inner dictionary.
+
+So the output of the for loop above gives us this result:
+#Ram {'Math': 80, 'English': 75, 'Science': 70}
+#Sita {'Math': 90, 'English': 85, 'Science': 95}
+#Gita {'Math': 70, 'English': 65, 'Science': 60}
+
+That is it prints the keys stored in name and the value of key stored in marks(inner dictionary)
+
+Now what if we want to print the marks for each subject of each student. In this case we require two for loops.Let us see that 
+
+for name,marks in students.items():
+ print(f"{name}:")
+ for subject,mark in marks.items():
+     print(f"{subject}:{mark}")
+ print("\n")
+
+
+Now how do we access only the subjects or only the names from that dictionary?
+The code for that is given as:
+print(students['Ram'].keys())
+
+What does this do?
+First students that is we go into dictionary then ram that is the keys of outer dictionary. But what it says is ram.keys that means the keys of the innerdictionary. Therefore it returns view object of the  keys of the inner dictionary which in this case is maths,english,science. So output will look like this:
+
+#dict_keys(['Math', 'English', 'Science'])
+If we want to conver this into list then we can use:
+print(list(students['Ram'].keys()))
+
+and the output will be:
+#['Math', 'English', 'Science']
+
+
+We accessed each subject for keys ram right. Now how do we do the same thing to print the name of students only with the same approach?Its more simple:
+print(students.keys())
+this will get all the keys of the dictionary students which is:
+#dict_keys(['Ram', 'Sita', 'Gita'])
+again convert it to the list if you want like we did it before.
+
+
+

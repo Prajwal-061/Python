@@ -1,0 +1,40 @@
+Dictionary:
+
+Dictionary are the unordered collection of multiple data.It can also be empty.Dictionary contains the key value which must be present in each dataset and key value must be unique and immutable.Key can be strings, integers,floating values, but not list,set.
+
+What i learned about Dictionary:
+
+Syntax of the dictionary:
+Students={ 'Name':'Prajwal' , 'Age':20 , 'Hobby':'Chess'
+           
+         }
+
+Here Student is the dictionary that contains Name, Age and Hobby as Key values which are unique.
+How do we access the values from dictionary? Suppose i want to print the name of student. Then simply execute:
+print(Students['Name'])
+
+we can easily update the dictionary like by adding new key or changing the values of the present keys.
+Updating the values present in Student dictionary:
+Students['age']=22  // this will simply update the value of (key) age.
+
+we can also add the new key elements in dictionary. The syntax is same as we update the dictionary.
+Students['Course']='BTech'
+This will add new key element Course and its value BTech in the Student Dictionary.
+
+Alos deleting the key from dictionary is simple.
+del(Students['Hobby'])
+This will delete the key Hobby and its value.
+
+Now, How do we print the values from dictionary?
+Let's deal with it too. 
+Here is how we can:
+
+This will only print the keys from the dictionary.
+for student in Students:
+print(student) 
+
+To print the values we simply modify the print statement in the above for loop, which will look like this:
+print(student,Students[student])
+
+This is how we can perform the basics operaiton in Dictionary.
+
